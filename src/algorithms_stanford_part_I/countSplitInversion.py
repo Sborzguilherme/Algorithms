@@ -28,6 +28,10 @@ def countSplitInv (arr):
   return mergeAndCountSplitInv(left_array, right_array, x+y)
 
 
-test = [6,5,4,3,2,1]
-[arr,result] = countSplitInv(test)
+#test = [6,5,4,3,2,1]
+
+with open('splitTest.txt') as file:
+  rawArr = map(lambda x: int(x), file.readlines())
+
+[arr, result] = countSplitInv(list(rawArr))
 print('Split Inversions {}'.format(result))
